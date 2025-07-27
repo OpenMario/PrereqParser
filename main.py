@@ -70,7 +70,7 @@ PREREQUISITE_GRAMMAR = r"""
 
     SUBJECT_ID: /[A-Z]{2,5}/
     COURSE_NUMBER: /[A-Z0-9]+/
-    GRADE_VALUE: /[A-F][+-]?|CR|NC/
+    GRADE_VALUE: /CR|NC|[A-F][+-]?/
     MIN_GRADE_TEXT: /[Mm]in\s+[Gg]rade\s*:\s*/
 
     %import common.WS
