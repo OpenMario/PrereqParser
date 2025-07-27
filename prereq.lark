@@ -1,0 +1,32 @@
+start: or_expression
+
+?or_expression: and_expression
+| or_expression "or"i and_expression
+
+?and_expression: course_term
+| and_expression "and"i course_term
+
+?course_term: course_with_metadata
+| "(" or_expression ")"  -> grouped_expression
+
+course_with_metadata: course_code grade_requirement? help_text?
+
+course_code: SUBJECT_ID COURSE_NUMBER
+
+grade_requirement: "[" MIN_GRADE_TEXT GRADE_VALUE "]"
+
+help_text: OPEN_PAREN HELP_TEXT_CONTENT CLOSE_PAREN
+
+OPEN_PAREN: "("
+CLOSE_PAREN: ")"
+
+// Change from '*' to '+'
+HELP_TEXT_CONTENT: /[^)]+/ // Matches one or more characters that are not ')'
+
+SUBJECT_ID: /[A-Z]{2,5}/
+COURSE_NUMBER: /[A-Z0-9]+/
+GRADE_VALUE: /CR|NC|[A-F][+-]?/
+MIN_GRADE_TEXT: /[Mm]in\s+[Gg]rade\s*:\s*/
+
+%import common.WS
+%ignore WS
