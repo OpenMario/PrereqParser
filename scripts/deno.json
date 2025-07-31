@@ -1,0 +1,23 @@
+{
+  "tasks": {
+    "dev": "deno run -A main.ts",
+    "prod": "deno run -A main.ts --prod"
+  },
+  "fmt": {
+    "useTabs": false,
+    "indentWidth": 3,
+    "semiColons": true,
+    "singleQuote": true,
+    "lineWidth": 100,
+    "proseWrap": "preserve",
+    "exclude": ["./apps/front/src/routeTree.gen.ts","./apps/front/.vite/*","./apps/back/email_templates/*"],
+    "include": ["./apps/back","./apps/front"]
+  },
+  "imports": {
+    "@neo4j/cypher-builder": "npm:@neo4j/cypher-builder@^2.7.1",
+    "@std/assert": "jsr:@std/assert@1",
+    "@std/cli": "jsr:@std/cli@^1.0.21",
+    "neo4j-driver": "npm:neo4j-driver@^5.28.1"
+  },
+  "nodeModulesDir": "auto",
+}

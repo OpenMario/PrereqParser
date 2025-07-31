@@ -200,7 +200,7 @@ def main():
     NEO4J_URI = "neo4j://127.0.0.1:7687"  # Updated to match your Neo4j Desktop
     NEO4J_USERNAME = "neo4j"              # Default username
     NEO4J_PASSWORD = "321321654321"           # Change to your actual password
-    JSON_FILENAME = "./out/deps_graph.json"  # Your JSON file
+    JSON_FILENAME = "./out/deps_graph.json"  # Your JSON fill
 
     # Initialize loader
     loader = Neo4jPrerequisiteLoader(NEO4J_URI, NEO4J_USERNAME, NEO4J_PASSWORD)
